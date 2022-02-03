@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+:root {
+  --switchWidth: 65px;
+  --switchHeight: 30px;
+  --sliderRadius: 40px;
+  --disabledSwitch: #919191;
+  --disabledSlider: #d2d1d1;
+  --checkedSwitchRed: #a77d83;
+  --checkedSliderRed: #c0646c;
+  --checkedSwitchGreen: #88a97a;
+  --checkedSliderGreen: #80c265;
+  --checkedSwitchBlue: #7b8aac;
+  --checkedSliderBlue: #6583c5;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  padding-top: 20vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toggle {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 50px;
+  margin-left: 30vw;
+}
+.toggle__text {
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Switch */
+.toggle__button {
+  position: relative;
+}
+.switch {
+  width: var(--switchWidth);
+  height: var(--switchHeight);
+  border-radius: 15px;
+  background-color: var(--disabledSwitch);
+  border: none;
+
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider {
+  position: absolute;
+  left: calc(-1 * var(--sliderRadius) / 2);
+  bottom: calc(-1 * var(--sliderRadius) / 10);
+
+  background-color: var(--disabledSlider);
+  width: var(--sliderRadius);
+  height: var(--sliderRadius);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 6px 6px 21px -5px rgba(0, 0, 0, 0.61);
+
+  transition: all 0.5s ease;
+}
+
+.slider-active-red {
+  background-color: var(--checkedSliderRed);
+  transform: translateX(var(--switchWidth));
+}
+
+.switch-active-red {
+  background-color: var(--checkedSwitchRed);
+}
+.slider-active-green {
+  background-color: var(--checkedSliderGreen);
+  transform: translateX(var(--switchWidth));
+}
+
+.switch-active-green {
+  background-color: var(--checkedSwitchGreen);
+}
+.slider-active-blue {
+  background-color: var(--checkedSliderBlue);
+  transform: translateX(var(--switchWidth));
+}
+
+.switch-active-blue {
+  background-color: var(--checkedSwitchBlue);
 }
